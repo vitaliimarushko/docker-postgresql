@@ -7,11 +7,11 @@ Install the following dependencies:
 # Deployment
 
 1. Add required permission to execute the main script:
-```
+```shell
 sudo chmod u+x run.sh
 ```
 2. Run the script:
-```
+```shell
 ./run.sh
 ```
 ###### Notice
@@ -27,10 +27,13 @@ username | postgres
 password | 1
 database | postgres
 
-Also, you can get manual access via terminal using the following CLI command:
-```
+Also, you can get the manual access:
+1. through the docker instance:
+```shell
 docker exec -it docker-postgresql-1 /bin/bash -c "PGPASSWORD=1 psql --username=postgres"
 ```
-
-
+2. using locally installed `psql`:
+```shell
+PGPASSWORD=1 psql -h0.0.0.0 -p5433 -Upostgres
+```
 

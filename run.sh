@@ -6,7 +6,7 @@ volumeName=postgresqldata
 # create a volume if it doesn't exist
 existentVolume=$(docker volume ls -f name=$volumeName --format "{{.Name}}")
 
-if [[ "$existentVolume" == "$volumeName" ]];
+if [[ "$existentVolume" != "$volumeName" ]];
   then
     docker volume create "$volumeName"
 fi
