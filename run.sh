@@ -17,6 +17,7 @@ docker rm "$containerName"
 
 # run a new container
 docker run -d \
+  --restart unless-stopped \
   --name "$containerName" \
   -e POSTGRES_PASSWORD=1 \
   -v "$volumeName":/var/lib/postgresql/data \
